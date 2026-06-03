@@ -1,0 +1,324 @@
+/* =========================
+   기본 설정
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #f4f5f7;
+  font-family: Arial, sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 50px 20px;
+}
+
+/* =========================
+   앱 컨테이너
+========================= */
+
+.app-container {
+  width: 100%;
+  max-width: 700px;
+
+  background-color: white;
+
+  border-radius: 24px;
+
+  padding: 40px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.app-title {
+  text-align: center;
+  color: #672be0;
+
+  margin-bottom: 24px;
+}
+
+/* =========================
+   주간 이동
+========================= */
+
+.week-navigation {
+  background-color: #ede7ff;
+
+  border-radius: 14px;
+
+  padding: 14px 20px;
+
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.week-button {
+  border: none;
+
+  background: transparent;
+
+  color: #672be0;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+}
+
+.week-button:hover {
+  opacity: 0.9;
+}
+
+#weekRangeText {
+  color: #672be0;
+  font-size: 18px;
+}
+
+/* =========================
+   주간 캘린더
+========================= */
+
+.week-calendar {
+  display: grid;
+
+  grid-template-columns: repeat(7, 1fr);
+
+  gap: 8px;
+
+  margin-bottom: 24px;
+}
+
+.day-card {
+  border: 1px solid #dddddd;
+
+  border-radius: 10px;
+
+  padding: 12px;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.day-card:hover {
+  border-color: #672be0;
+}
+
+.day-card.selected {
+  background-color: #672be0;
+  color: white;
+}
+
+.day-card.today {
+  border: 2px solid #672be0;
+  font-weight: bold;
+}
+
+.day-name {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.day-date {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.todo-count {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #888;
+}
+
+.day-card.selected .todo-count {
+  color: white;
+}
+
+/* =========================
+   선택 날짜
+========================= */
+
+.selected-date-section {
+  margin-bottom: 20px;
+}
+
+.current-date {
+  color: #672be0;
+  text-align: center;
+}
+
+/* =========================
+   입력 영역
+========================= */
+
+.todo-input-section {
+  display: flex;
+  gap: 10px;
+}
+
+.todo-input {
+  flex: 1;
+
+  padding: 12px;
+
+  border: 1px solid #dcdcdc;
+
+  border-radius: 8px;
+
+  outline: none;
+}
+
+.todo-input:focus {
+  border-color: #672be0;
+}
+
+.add-button {
+  border: none;
+
+  background-color: #672be0;
+
+  color: white;
+
+  padding: 12px 20px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.add-button:hover {
+  opacity: 0.9;
+}
+
+/* =========================
+   안내 메시지
+========================= */
+
+.message-text {
+  min-height: 20px;
+
+  margin-top: 10px;
+
+  color: #e74c3c;
+
+  font-size: 14px;
+}
+
+/* =========================
+   필터 버튼
+========================= */
+
+.filter-section {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.filter-button {
+  flex: 1;
+  border: 1px solid #dcdcdc;
+
+  background-color: white;
+
+  color: #555;
+
+  padding: 8px 16px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.filter-button:hover {
+  border-color: #672be0;
+}
+
+.filter-button.active {
+  background-color: #672be0;
+  color: white;
+  border-color: #672be0;
+}
+
+/* =========================
+   Todo 목록
+========================= */
+
+.todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  border: 1px solid #ececec;
+
+  border-radius: 10px;
+
+  padding: 14px;
+
+  margin-bottom: 10px;
+}
+
+.todo-content {
+  flex: 1;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* =========================
+   버튼 그룹
+========================= */
+
+.todo-button-group {
+  display: flex;
+  gap: 6px;
+}
+
+.todo-button {
+  border: none;
+
+  color: white;
+
+  padding: 8px 10px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-size: 12px;
+}
+
+.complete-button {
+  background-color: #2ecc71;
+}
+
+.edit-button {
+  background-color: #f39c12;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+}
