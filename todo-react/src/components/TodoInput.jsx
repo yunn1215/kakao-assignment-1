@@ -1,12 +1,18 @@
+import { useState } from "react";
+
 function TodoInput({ inputValue, setInputValue, onAddTodo }) {
+  const [isComposing, setIsComposing] = useState(false);
+
   return (
     <div className="mt-6 flex">
       <input
         type="text"
         value={inputValue}
         onChange={(event) => setInputValue(event.target.value)}
+        onCompositionStart={() => setIsComposing(true)}
+        onCompositionEnd={() => setIsComposing(false)}
         onKeyDown={(event) => {
-          if (event.key === "Enter") {
+          if (event.key === "Enter" && !isComposing) {
             onAddTodo();
           }
         }}
